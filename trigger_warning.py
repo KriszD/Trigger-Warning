@@ -1,39 +1,34 @@
+# All imported modules
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 import streamlit as st
-import numpy as np
-import pandas as pd
-from pyyoutube import Api
 from streamlit_player import st_player
-from typing import Optional
-from pydantic import BaseModel
+from PIL import Image
 
+# Creates the title
 st.title('Trigger Warning Database')
 
+# Accesses the database
 if not firebase_admin._apps:
     cred = credentials.Certificate('triggers-314603-396887c5358b.json')
     default_app = firebase_admin.initialize_app(cred)
 
+# Creates variables
 ansab = anshom = ansinc = ansvio = ansrac = anssel = ansmis = anseat = ansins = ansbod = ansnud = ansmed = ansmil = anssub = ansfla = str(0)
 yesab = yeshom = yesinc = yesvio = yesrac = yessel = yesmis = yeseat = yesins = yesbod = yesnud = yesmed = yesmil = yessub = yesfla = str(0)
 noab = nohom = noinc = novio = norac = nosel = nomis = noeat = noins = nobod = nonud = nomed = nomil = nosub = nofla = str(0)
 key = 0
 
-# yestest = 0
-# notest = 0
-
+# Gets the youtube video link and then removes everything but the video ID
 link = st.text_input('Enter link of the video to review:')
-print(link)
 id = link.replace("https://www.youtube.com/watch?v=", "")
-print('id', id)
-
 
 if len(link) != 0:
     db = firestore.client()
     try:
         trigger = db.collection(u'triggers').document(id).get().to_dict()
-        nohom = trigger['nohom'] #copy this for all of them
+        nohom = trigger['nohom']
         yeshom = trigger['yeshom']
         noab = trigger['noab']
         yesab = trigger['yesab']
@@ -63,34 +58,25 @@ if len(link) != 0:
         yesfla = trigger['yesfla']
     except:
         print('firsttimevid')
-    if link[0:32] == "https://www.youtube.com/watch?v=":
-        st.sidebar.header('Triggers')
 
-        # my_expander = st.sidebar.beta_expander("test", expanded=False)
-        # with my_expander:
-        #     anstest = st.selectbox('Select', ['no','yes'], key=1)
-        #     if anstest == 'yes':
-        #         yestest = int(yestest)
-        #         yestest += 1
-        #         print(yestest)
-        #     elif anstest == 'no':
-        #         notest = int(notest)
-        #         notest += 1
-        #         print(notest)
+    if link[0:32] == "https://www.youtube.com/watch?v=": # If the beginning of the link is a youtube link it shows the triggers
+        st.sidebar.header('Triggers') # Creates the sidebar
+        image = Image.open(r'C:\Users\user\Downloads\TW.png') # Uploads the logo
+        st.sidebar.image(image, caption='', width=300) # Adjusts the logo
 
         st.sidebar.markdown('***')
         result = st.sidebar.button('Submit')
 #        st.write("State of button:", result)
-        my_expander = st.sidebar.beta_expander("Abuse", expanded=False)
+        my_expander = st.sidebar.beta_expander("Abuse", expanded=False) # Makes a selectbox that is automatically closed
         with my_expander:
-            ansab = st.selectbox('Select', ["No" + " (" + str(noab) + ")","Yes" + " (" + str(yesab) + ")"], key = 1)
+            ansab = st.selectbox('Select', ["No" + " (" + str(noab) + ")","Yes" + " (" + str(yesab) + ")"], key = 1) # Creates Yes and No options
             print(yesab)
             if result:
-                if ansab == ("Yes" + " (" + str(yesab) + ")"):
+                if ansab == ("Yes" + " (" + str(yesab) + ")"): # Adds the amount of yes's to the database
                     yesab = int(yesab)
                     yesab += 1
                     print(yesab)
-                elif ansab == ("No" + " (" + str(noab) + ")"):
+                elif ansab == ("No" + " (" + str(noab) + ")"): # Adds the amount of no's to the database
                     noab = int(noab)
                     noab += 1
                     print(noab)
@@ -288,7 +274,7 @@ if len(link) != 0:
         })
 
     else:
-        st.text('Invalid Link')
+        st.text('Invalid Link') # If it's not a youtube link it say's invalid link
 
-if link[0:32] == "https://www.youtube.com/watch?v=":
+if link[0:32] == "https://www.youtube.com/watch?v=": # Embed's the youtube video into the website
     st_player(link)

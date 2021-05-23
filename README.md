@@ -1,5 +1,4 @@
 # About The Project
-Product Name Screen Shot
 
 We found many trigger warning websites that would have users say what triggers were included on movies, so we though why not reach a different group of people by doing this on youtube instead.
 

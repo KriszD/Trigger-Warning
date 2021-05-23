@@ -1,4 +1,5 @@
 # About The Project
+https://www.youtube.com/watch?v=fo2fgHogxLk An explanation for the website.
 ![Trigger Warning](https://user-images.githubusercontent.com/82678405/119267960-c3e9ec80-bbbe-11eb-92d8-e562946df09d.png)
 
 We found many trigger warning websites that would have users say what triggers were included on movies, so we though why not reach a different group of people by doing this on youtube instead.

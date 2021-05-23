@@ -41,7 +41,7 @@ Krisztian Drimba - kriszemails@gmail.com
 Beatrice Bradau - beatricebradau@gmail.com
 Kathrine Mondshain - kathrine.mondshain@gmail.com
 
-# Project Link: https://github.com/your_username/repo_name
+# Project Link: https://github.com/KriszD/Trigger-Warning
 
 # Acknowledgements
 Streamlit Documentation https://docs.streamlit.io/en/stable/getting_started.html

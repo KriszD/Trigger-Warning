@@ -61,6 +61,7 @@ if len(link) != 0:
 
     if link[0:32] == "https://www.youtube.com/watch?v=": # If the beginning of the link is a youtube link it shows the triggers
         st.sidebar.header('Triggers') # Creates the sidebar
+        # Make sure you put in your own file directory path of where the logo is on your computer.
         image = Image.open(r'C:\Users\user\Downloads\TW.png') # Uploads the logo
         st.sidebar.image(image, caption='', width=300) # Adjusts the logo
 

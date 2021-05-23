@@ -7,8 +7,7 @@ We found many trigger warning websites that would have users say what triggers w
 This project will help users on the internet who struggle with triggers found in online video sharing websites.  This will allow them to check if other users have also said there are triggers in the youtube video.  In order to improve funcitonality, in the future, we would like to create it into a chrome extension that allows them to add triggers while on the youtube website.
 
 # Built With
-Streamlit
-Firebase
+Streamlit & Firebase
 
 # Getting Started
 You need to create a streamlit account.  Then you need to install streamlit with pip, and then you can access the documentations and add things into your code.  When you want to see your website, you run in the terminal (streamlit run {yourfile}.py) which will allow you to see your code on the website.  Using this, you can then create a website.  The other aspect is firebase, where we needed to create a database that can be accessed by the code in order to store information given by the user, so it can be accessed by other users as well.

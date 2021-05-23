@@ -24,39 +24,36 @@ This is an example of how you may give instructions on setting up your project l
 # Prerequisites
 This is an example of how to list things you need to use the software and how to install them.
 
-npm
-npm install npm@latest -g
-Installation
-Get a free API Key at https://example.com
-Clone the repo
-git clone https://github.com/your_username_/Project-Name.git
-Install NPM packages
-npm install
-Enter your API in config.js
-const API_KEY = 'ENTER YOUR API';
-Usage
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Any python IDE with pip.
 
-For more examples, please refer to the Documentation
+This installs all of the modules:
+pip install streamlit
+pip install streamlit_player
+pip install firebase
+pip install firebase-admin
+
+This accesses all the modules:
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+import streamlit as st
+from streamlit_player import st_player
+
 
 # Roadmap
-See the open issues for a list of proposed features (and known issues).
+There are lots of fine fixes we need including: - Making sure the users can only submit once (based on IP).  - Making the design better.
 
 # Contributing
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are greatly appreciated.
 
-# Fork the Project
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
-Commit your Changes (git commit -m 'Add some AmazingFeature')
-Push to the Branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-License
-Distributed under the MIT License. See LICENSE for more information.
 
 # Contact
-Your Name - @your_twitter - email@example.com
+Krisztian Drimba - kriszemails@gmail.com
+Beatrice Bradau - beatricebradau@gmail.com
+Kathrine Mondshain - kathrine.mondshain@gmail.com
 
 # Project Link: https://github.com/your_username/repo_name
 
 # Acknowledgements
 Streamlit Documentation https://docs.streamlit.io/en/stable/getting_started.html
+Firebase Documentation https://firebase.google.com/docs?authuser=0

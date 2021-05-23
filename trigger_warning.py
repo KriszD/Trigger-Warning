@@ -7,8 +7,9 @@ import pandas as pd
 from pyyoutube import Api
 from streamlit_player import st_player
 from typing import Optional
-from fastapi import FastAPI
 from pydantic import BaseModel
+
+st.title('Trigger Warning Database')
 
 if not firebase_admin._apps:
     cred = credentials.Certificate('triggers-314603-396887c5358b.json')
@@ -22,7 +23,7 @@ key = 0
 # yestest = 0
 # notest = 0
 
-link = st.text_input('Enter link of the video you want to watch:')
+link = st.text_input('Enter link of the video to review:')
 print(link)
 id = link.replace("https://www.youtube.com/watch?v=", "")
 print('id', id)
@@ -63,7 +64,7 @@ if len(link) != 0:
     except:
         print('firsttimevid')
     if link[0:32] == "https://www.youtube.com/watch?v=":
-        st.sidebar.title('Trigger Warnings')
+        st.sidebar.header('Triggers')
 
         # my_expander = st.sidebar.beta_expander("test", expanded=False)
         # with my_expander:
@@ -77,9 +78,9 @@ if len(link) != 0:
         #         notest += 1
         #         print(notest)
 
+        st.sidebar.markdown('***')
         result = st.sidebar.button('Submit')
 #        st.write("State of button:", result)
-
         my_expander = st.sidebar.beta_expander("Abuse", expanded=False)
         with my_expander:
             ansab = st.selectbox('Select', ["No" + " (" + str(noab) + ")","Yes" + " (" + str(yesab) + ")"], key = 1)

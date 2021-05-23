@@ -59,14 +59,4 @@ Your Name - @your_twitter - email@example.com
 # Project Link: https://github.com/your_username/repo_name
 
 # Acknowledgements
-GitHub Emoji Cheat Sheet
-Img Shields
-Choose an Open Source License
-GitHub Pages
-Animate.css
-Loaders.css
-Slick Carousel
-Smooth Scroll
-Sticky Kit
-JVectorMap
-Font Awesome
+Streamlit Documentation https://docs.streamlit.io/en/stable/getting_started.html
